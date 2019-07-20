@@ -14,10 +14,6 @@ app.use(express.urlencoded({
 }));
 app.use(express.json());
 
-app.listen(PORT, function () {
-    console.log("App listening on PORT " + PORT);
-});
-
 var reserved = [];
 var waitlist = [];
 
@@ -51,4 +47,15 @@ app.get("/reserve", function(req, res) {
 
 app.get("/tables", function(req, res) {
     res.sendFile(path.join(__dirname, "tables.html"));
+});
+
+app.post("/api/tables", (req, res) => {
+    var newReservation = req.body;
+    if (reserved.length < 5){
+        reserved.push(newReservation);
+        res.json(true);
+    } else {
+        waitlist.push(newReservation);
+        res.json(false);
+    }
 });
