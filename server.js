@@ -30,13 +30,6 @@ app.get("/api/waitlist", (req, res) => {
 });
 
 
-//require("./routes/apiRoutes")(app);
-//require("./routes/htmlRoutes")(app);
-
-app.listen(PORT, function () {
-    console.log("App listening on PORT " + PORT);
-});
-
 app.get("/", function(req, res) {
     res.sendFile(path.join(__dirname, "home.html"));
 });
@@ -47,6 +40,7 @@ app.get("/reserve", function(req, res) {
 
 app.get("/tables", function(req, res) {
     res.sendFile(path.join(__dirname, "tables.html"));
+});
 
 app.post("/api/tables", (req, res) => {
     var newReservation = req.body;
@@ -58,3 +52,4 @@ app.post("/api/tables", (req, res) => {
         res.json(false);
     }
 });
+
