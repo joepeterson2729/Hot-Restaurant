@@ -6,6 +6,8 @@ var path = require("path");
 var app = express();
 var PORT = 3000;
 
+
+
 // Sets up the Express app to handle data parsing
 app.use(express.urlencoded({
     extended: true
@@ -13,6 +15,12 @@ app.use(express.urlencoded({
 app.use(express.json());
 
 
+
+
+
+
+//require("./routes/apiRoutes")(app);
+//require("./routes/htmlRoutes")(app);
 
 
 
