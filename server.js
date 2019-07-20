@@ -6,8 +6,6 @@ var path = require("path");
 var app = express();
 var PORT = 3000;
 
-
-
 // Sets up the Express app to handle data parsing
 app.use(express.urlencoded({
     extended: true
@@ -23,6 +21,21 @@ app.get("/api/tables", (req, res) => {
 
 app.get("/api/waitlist", (req, res) => {
     res.json(waitlist);
+});
+
+app.post("/api/tables", (req, res) => {
+    var newReservation = req.body;
+    if (reserved.length < 5){
+        reserved.push(newReservation);
+        res.json(true);
+    } else {
+        waitlist.push(newReservation);
+        res.json(false);
+    }
+});
+
+app.listen(PORT, function(){
+    console.log("Server listening on port: " + PORT);
 });
 
 app.get("/", function(req, res) {

@@ -2,14 +2,6 @@
 <html lang="en">
 
 <head>
-<<<<<<< HEAD
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Reservation Page</title>
-      <!--Bootstrap-->
-      <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-=======
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <meta http-equiv="X-UA-Compatible" content="ie=edge">
@@ -20,7 +12,6 @@
                 crossorigin="anonymous">
         <!--jquery-->
         <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
->>>>>>> 6bdfe01f638192db51258c1e157094cf74e2ca0d
 </head>
 
 <body>
@@ -33,7 +24,7 @@
                                 <h1 class="display-4">Hot Restaurant</h1>
                                 <hr class="my-4">
                                 <p>Make your reservation</p>
-                                <a class="btn btn-primary btn-lg" href="#" role="button">View Tables</a>
+                                <a class="btn btn-primary btn-lg" href="/tables" role="button">View Tables</a>
                         </div>
                 </div>
                 <!--Form-->
@@ -68,7 +59,6 @@
                 integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
                 crossorigin="anonymous"></script>
         </script>
-
 </body>
 
 </html>
@@ -82,17 +72,6 @@
 
         $("#reserve").on("click", function (e) {
 
-<<<<<<< HEAD
-	$("#reserve").on("click", function(){
-
-		// Here we grab the form elements
-		var newReservation = {
-			customerName: $('#name').val().trim(),
-			phoneNumber: $('#phoneNumber').val().trim(),
-			customerEmail: $('#email').val().trim(),
-			customerID: $('#uniqueId').val().trim()
-		};
-=======
                 // Here we grab the form elements
                 var newReservation = {
                         customerName: $('#name').val().trim(),
@@ -102,7 +81,6 @@
                 };
 
                 console.log(newReservation);
->>>>>>> 6bdfe01f638192db51258c1e157094cf74e2ca0d
 
 
 
@@ -121,19 +99,11 @@
                                 alert("Sorry you are on the wait list")
                         }
 
-<<<<<<< HEAD
-	    	// Clear the form when submitting
-    		$('#name').val("");
-			$('#phoneNumber').val("");
-			$('#email').val("");
-			$('#uniqueId').val("");
-=======
                         // Clear the form when submitting
                         $('#reserve_name').val("");
                         $('#reserve_phone').val("");
                         $('#reserve_email').val("");
                         $('#reserve_uniqueID').val("");
->>>>>>> 6bdfe01f638192db51258c1e157094cf74e2ca0d
 
                 });
 
