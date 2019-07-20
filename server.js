@@ -29,16 +29,12 @@ app.get("/api/waitlist", (req, res) => {
     res.json(waitlist);
 });
 
-<<<<<<< HEAD
+
 
 //require("./routes/apiRoutes")(app);
 //require("./routes/htmlRoutes")(app);
 
 
-
-=======
-<<<<<<< HEAD
->>>>>>> a0b25ea59565d3b9426cd13e50e86cf4a921ad3c
 app.listen(PORT, function () {
     console.log("App listening on PORT " + PORT);
 });
@@ -63,5 +59,4 @@ app.post("/api/tables", (req, res) => {
         waitlist.push(newReservation);
         res.json(false);
     }
->>>>>>> 7e20db705c4404b4dda624cf6de7f78fb6a143ce
 });
