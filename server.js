@@ -16,18 +16,8 @@ app.listen(PORT, function () {
     console.log("App listening on PORT " + PORT);
 });
 
-var reserved = [{
-    customerName: "asdf",
-    phoneNumber: "123456789",
-    customerEmail: "asdf",
-    customerID: "asdf"
-}];
-var waitlist  = [{
-    customerName: "asdf",
-    phoneNumber: "123456789",
-    customerEmail: "asdf",
-    customerID: "asdf"
-}];
+var reserved = [];
+var waitlist = [];
 
 app.get("/api/tables", (req, res) => {
     res.json(reserved);
@@ -35,4 +25,15 @@ app.get("/api/tables", (req, res) => {
 
 app.get("/api/waitlist", (req, res) => {
     res.json(waitlist);
+});
+
+app.post("/api/tables", (req, res) => {
+    var newReservation = req.body;
+    if (reserved.length < 5){
+        reserved.push(newReservation);
+        res.json(true);
+    } else {
+        waitlist.push(newReservation);
+        res.json(false);
+    }
 });
