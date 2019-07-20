@@ -12,10 +12,27 @@ app.use(express.urlencoded({
 }));
 app.use(express.json());
 
-
-
-
-
 app.listen(PORT, function () {
     console.log("App listening on PORT " + PORT);
+});
+
+var reserved = [{
+    customerName: "asdf",
+    phoneNumber: "123456789",
+    customerEmail: "asdf",
+    customerID: "asdf"
+}];
+var waitlist  = [{
+    customerName: "asdf",
+    phoneNumber: "123456789",
+    customerEmail: "asdf",
+    customerID: "asdf"
+}];
+
+app.get("/api/tables", (req, res) => {
+    res.json(reserved);
+});
+
+app.get("/api/waitlist", (req, res) => {
+    res.json(waitlist);
 });
